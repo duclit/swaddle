@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: 'Source Code Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	text-rendering: geometricPrecision;
+	color: white;
+}
+
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-color: #0F0F0F;
+}
+
+a {
+	color: rgb(0,100,200);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: rgb(0,80,160);
+}
+
+span[color=red] {
+	color: #FF5C5C;
+}
+
+span[color=blue] {
+	color: #5C6DFF;
+}
+
+span[color=green] {
+	color: #AEFF5C;
+}
+
+span[color=purple] {
+	color: #A45CFF;
+}
+
+type {
+	display: none;
+}
