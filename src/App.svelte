@@ -17,7 +17,9 @@
 	]
 
 	// The current state of the list, used to auto save
-	let currentState = [];
+	// <main> is the main function, and other nodes may be added. (nodeName: [instructions])
+	let currentState = {'<main>': [],};
+	let currentNode = '<main>'; // The node that is being edited
 	let hidden = true;
 
 	const textToNode = {
@@ -45,7 +47,7 @@
 
 		for (const node of saved) {
 			list = [...list, {id: list.length + 1, component: textToNode[node[0]]}];
-			currentState.push(node);
+			currentState[currentNode].push(node);
 		}
 	}
 
@@ -64,7 +66,7 @@
 	}
 
 	function updateState() {
-		currentState = [];
+		currentState[currentNode] = [];
 
 		for (const child of document.getElementById('code').children) {
 			let node = '';
@@ -75,7 +77,7 @@
 				else attributes[subchild.getAttribute('is')] = subchild.tagName == 'DIV' ? subchild.innerHTML : subchild.value;
 			}
 
-			currentState.push([node, attributes]);
+			currentState[currentNode].push([node, attributes]);
 		}
 	}
 
@@ -100,7 +102,7 @@
 
 <main >
 	<nav>
-		<Breadcrumb items={['Projects', 'main']}/>
+		<Breadcrumb items={['Projects', 'myProject', 'main']}/>
 		<button on:click="{compile}">Compile</button>
 	</nav>
 	<div id="container">
